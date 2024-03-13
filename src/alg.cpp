@@ -26,9 +26,10 @@ int cbinsearch(int *arr, int size, int value) {
                 }
             }
             bFlag = false;
-        } else if (arr[iTemp] > value && arr[iTemp - 1] < value || arr[iTemp + 1] > value && arr[iTemp] < value) {
+        } else if (arr[iTemp] > value && arr[iTemp - 1] < value) {
             return 0;
-
+        } else if (arr[iTemp + 1] > value && arr[iTemp] < value) {
+            return 0;
         } else if (arr[iTemp] > value) {
             iTemp--;
         } else {
